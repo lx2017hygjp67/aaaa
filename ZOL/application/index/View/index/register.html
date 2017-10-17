@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>注册</title>
+    <link rel="stylesheet" type="text/css" href="/ZOL/public/static/css/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="/ZOL/public/static/css/register.css">
+  <link rel="icon" href="http://icon.zol-img.com.cn/zol_shop/favicon.ico" type="image/icon" />
+  <link rel="shortcut icon" href="http://icon.zol-img.com.cn/zol_shop/favicon.ico" type="image/icon" />
+	<script type="text/javascript" src="/ZOL/public/static/js/jquery-3.2.1.min.js"></script>
+    <script type="text/javascript" src="/ZOL/public/static/js/bootstrap.js"></script>
+    <script type="text/javascript" src="/ZOL/public/static/js/register.js"></script>
+</head>
+<body>
+   <div id="body">
+   	   <div class="title">
+   	   	    <div class="ig">
+   	   	    	<img src="/ZOL/public/static/img/7.jpg">   	   	    	
+   	   	    </div>
+   	   	    <div class="ddl">
+   	   	    	<h3>已有ZOL商城账号？</h3>
+			   <font><a href="./login.html">立即登录</a></font>
+   	   	    </div>
+   	   </div>
+   	   <hr/>
+    <!--    中间部分 -->
+       <div class="mid">
+       	    <div class="tu">
+       	    	  <img src="/ZOL/public/static/img/8.jpg">
+       	    </div>
+
+           <div class="left">
+      <!-- ----------------------------------------form表单 ------------------------ -->
+            <form method="post" action="register">
+           
+
+           	    <div class="min">
+           	    	<img src="/ZOL/public/static/img/9.jpg">
+           	    </div>
+
+                <div class="sj">
+                	<div class="label">
+                        <em class="xh">*</em>
+                        手机号：
+                	</div>
+                	<input name="number" id="" type="text" class="text" maxlength="11" style="border-color: rgb(204, 204, 204);"><span></span>
+                	<div class="tips">请填写手机号码</div>
+                </div>
+              
+                <div class="yzm">
+                	<div class="label">
+                        <em class="xh">*</em>
+                        验证码：
+                	</div>
+                	<input name="hmyzm" id="" type="text" class="text" maxlength="11" style="border-color: rgb(204, 204, 204); width:150px">
+              <!--  以下是图片验证码部分 -->
+
+                
+                	<span>
+                   <img src="__URL__/yanzhengma/getverify.php" alt="" id="verifyimg" style="position: relative;top: 15px;">
+                 </span>
+
+                
+                  <a onclick="document.getElementById('verifyimg').src = '__URL__/yanzhengma/getverify.php'" href="javascript:void(0)"  style="color: black;position: relative;top: 35px;">看不清，换一张</a>
+                 
+                <!--  以上是图片验证码部分 -->
+                	<span></span>
+                    <div class="tips">请填写图片验证码</div>
+                </div>
+
+                <div class="yzm">
+                	<div class="label">
+                        <em class="xh">*</em>
+                        验证码：
+                	</div>
+                	<input name="dxyzm" id="" type="text" class="text" maxlength="11" style="border-color: rgb(204, 204, 204); width:150px">
+                	<input name="" id="" type="button" value="获取短信验证码" class="sd" style="width:110px">
+                	<span></span>
+                	<div class="tips">请填写手机号码，然后点击[获取验证码]</div>
+                </div>
+
+                <div class="mm">
+                	 <div class="label">
+                        <em class="xh">*</em>
+                        密码：
+                	</div>
+                	<input name="mima" id="" type="text" class="text" maxlength="11" style="border-color: rgb(204, 204, 204);"><span></span>
+                	<div class="tips">6-16位字母和数字的组合，不可用特殊字符</div>
+                </div>
+
+                <label class="agreement">                                            
+                             <input type="checkbox" value="1" name="J_regRead_phone" id="J_regRead_phone" checked="" style="border-color: rgb(204, 204, 204); width:40px;height: 15px;">同意<a href="http://help.zol.com/index.php?c=Detail&amp;id=1019" target="_blank">《商城用户协议》</a><a href="http://help.zol.com/index.php?c=Detail&amp;id=1022" target="_blank" class="xy_a">《隐私权说明》</a>               
+                 </label>
+                <div class="dl">
+                 <input name="submit" type="submit" value="注册" class="register-btn" id="J_register_phone_submit">
+                </div>
+               
+            </form>
+
+<!--             ---------------------以上是form表单提交数据--------------------- -->
+           </div>
+           
+           <div class="right">
+
+                 <div class="wz">
+                 	<p>如果您已经注册，请<a href="login.html">直接登录</a>或者用以下方式登录：</p>
+                 </div>
+
+           	    <div class="wx">
+           	    	<img src="/ZOL/public/static/img/10.jpg">
+           	    </div>
+
+           	    <div class="qq">
+           	    	<img src="/ZOL/public/static/img/11.jpg">
+           	    </div>
+           </div>
+          
+
+
+       </div>
+
+       <hr/>
+            <div class="footer">
+  
+     	 <span id="op">关于ZOL商城&nbsp;|&nbsp;联系我们&nbsp;|&nbsp;帮助中心</span>
+       <span id="po">©2017. 中关村在线 版权所有</span>
+    
+
+     </div>
+  
+    <hr>
+
+   </div>
+
+
+</body>
+</html>

@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>购物车</title>
+	<meta charset="utf-8">
+</head>
+	<link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="__CSS__/cart.css">
+<body>
+	<div class="top_header">
+        <a target="_blank" href="http://www.zol.com.cn">中关村在线</a>
+        |<a target="_blank" href="http://www.zol.com">ZOL商城</a>
+        |<a target="_blank" href="http://tuan.zol.com">Z团</a>
+        |<a target="_blank" href="http://dealer.zol.com.cn">经销商</a>
+
+        <div class="top_mid">
+            您好，{}
+            <span id="sp0"><a href="">退出</a></span>
+            <span id="sp1"><a href="personal">买家中心</a></span>
+            <div id="hide">
+                <li><a href="">已买到的商品</a></li>
+                <li><a href="">收货地址</a></li>
+            </div>
+            <i>
+                <a href="cart">我的购物车（）</a>
+                <a href="personal?c=SystemMessage">消息中心（）</a>
+                <a href="http://help.zol.com/">帮助中心</a>
+            </i>
+        </div>
+    </div>
+
+    <div class="bigone">
+    	<div class="top">
+    		<a href=""><img src="__IMG__/logo_130x60.png"></a>
+    		<ul class="ui">
+    			<li class="s1">加入购物车</li>
+    			<li class="s2">下订单</li>
+    			<li class="s3">去付款</li>
+    			<li class="s4">确认收货</li>
+    			<li class="s5">评价</li>
+    		</ul>
+    	</div>
+    	<div class="content">
+    		{if $msg eq ''}
+    			<div class="none">
+	    			<img src="__IMG__/shopcar.png">
+	    			<p>您的购物车还没有商品,您可以：</p>
+	    			<a href="">挑选商品</a>
+    			</div>
+    		{/if}
+    	</div>
+    	
+
+    	<div class="like">
+    		<p>猜你喜欢</p>
+    		<hr>
+    		<a href=""><img src="" alt="请稍等"></a>
+    		<a href=""><img src="" alt="请稍等"></a>
+    		<a href=""><img src="" alt="请稍等"></a>
+    		<a href=""><img src="" alt="请稍等"></a>
+    	</div>
+
+		<hr>
+    	<div class="bottom">
+    		<ul>
+    			<li><a href="http://www.zol.com/help/detail/17/73/675.html">关于商城</a> |</li>
+    			<li><a href="http://www.zol.com/marketing/">营销中心</a> |</li>
+    			<li><a href="http://www.zol.com/help/">服务中心</a> |</li>
+    			<li><a href="http://www.zol.com/help/detail/17/73/674.html">联系我们</a> |</li>
+    			<li><a href="http://www.zol.com/help/detail/17/73/676.html">发展历程</a> |</li>
+    			<li><a href="http://www.zol.com/help/detail/17/73/677.html">媒体报道</a></li>
+    		</ul>
+    		<p>©2017中关村在线 版权所有. 京ICP备09041801号-182 京ICP证010391号</p>
+    		<div class="another_foot">
+            <a target="_blank" href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001021500016"><img width="85" height="32" src="http://icon.zol-img.com.cn/newshop/shop/index/beian.jpg"></a><a target="_blank" href="http://www.bj.cyberpolice.cn/index.do"><img width="86" height="32" src="http://icon.zol-img.com.cn/newshop/shop/index/jingcha.jpg"></a><a target="_blank" href="https://search.szfw.org/cert/l/CX20111228001277001325"><img width="90" height="32" src="http://icon.zol-img.com.cn/newshop/shop/index/chengxin.jpg"></a>
+        </div>
+    	</div>
+
+    </div>
+
+
+
+
+</body>
+	<script type="text/javascript" src="__JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__JS__/bootstrap.js"></script>
+    <script type="text/javascript" src="__JS__/public.js"></script>
+</html>

@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>商品分类</title>
+	<!-- <meta name="keywords" content="手机网上商城,手机在线购买,网购手机,手机价格" />
+	<meta name="description" content="ZOL网上商城为您提供最全的手机产品，网购手机、手机网上购买就在ZOL在线商城官网！" />
+	<meta http-equiv="Cache-Control" content="no-siteapp"/>
+	<meta http-equiv="Cache-Control" content="no-transform"/>
+	<meta name="applicable-device" content="pc"> -->
+
+	<link href="__CSS__/zolcom_index.css" rel="stylesheet" />
+	<link href="__CSS__/feedback.css" rel="stylesheet" type="text/css" />
+	<link href="__CSS__/shoploginbox.css" rel="stylesheet" />
+	<link href="__CSS__/side_toolbar.css" rel="stylesheet" type="text/css">
+	<link href="__CSS__/listv1.css" rel="stylesheet" type="text/css">
+	<link href="__CSS__/publichead.css" rel="stylesheet" type="text/css">
+	<link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.css">
+	<script src="__JS__/jquery.min.js"></script>
+	<style>
+		/*防止IE6顶部固定导航闪动所加样式*/
+		*html {
+			background-image: url(about:blank);
+			background-attachment: fixed;
+		}
+		.none {
+			display: none;
+		}
+		.search-list .search-box-bottom {
+			float: none;
+			padding: 0;
+		}
+		.search-list .search-box-bottom .search-bottom {
+			margin: 0 auto;
+		}
+		.search-box-bottom .search-bottom {
+			position: relative;
+			width: 536px;
+			height: 32px;
+			border: 2px solid #c40000;
+			z-index: 30;
+		}
+	</style>
+	<link rel="icon" href="http://icon.zol-img.com.cn/zol_shop/favicon.ico" type="image/icon" />
+	<link rel="shortcut icon" href="http://icon.zol-img.com.cn/zol_shop/favicon.ico" type="image/icon" />
+	<script type="text/javascript">
+		var paramStr = '&str=c34_s57';
+		//手机适配
+		if(/AppleWebKit.*mobile/i.test(navigator.userAgent) || (/MIDP|SymbianOS|NOKIA|SAMSUNG|LG|NEC|TCL|Alcatel|BIRD|DBTEL|Dopod|Windows; U; Windows NT 5.2; en-US|PHILIPS|HAIER|LENOVO|MOT-|Nokia|SonyEricsson|SIE-|Amoi|ZTE/.test(navigator.userAgent))){
+			try{
+				if(/Android|webOS|iPhone|iPod|Windows Phone|Windows; U; Windows NT 5.2; en-US|BlackBerry/i.test(navigator.userAgent)){
+					var baseUrl = "http://m.zol.com/index.php?c=Shop_List";
+					window.location.href = baseUrl + (paramStr = !'' ? paramStr : '');
+				}
+
+			}catch(e){}
+		}
+	</script>
+</head>
+<body>
+        <!-- 公共头部 -->
+<div id="header">
+{include file="index/header"}
+</div>
+
+<div id="body">
+	<div class="wrapper">
+		<div class="crumbs-bar" >
+			<div class="total">共<em>{64}</em>件</div>
+			<ul class="crumbs-nav clearfix" id="div1">
+				<li><a href="index" class="home">首页</a></li>
+				<li class="arrow">&gt;</li>
+				<li class="main-cate">
+					<div class="menu-drop">
+						<span class="current">{$res2.0.c_name}
+							<i class="ico"></i>
+						</span>
+						<div class="menu-drop-list">
+							<ul>
+								{volist name='res' id='v3'}
+								{if $v3.cid!=$res2.0.cid}
+								<li>
+								   <a href="type?cid={$v3.cid}">{$v3.c_name}</a>
+								</li>
+								{/if}
+								{/volist}
+							</ul>
+						</div>
+					</div>
+				</li>
+				<li class="arrow">&gt;</li>
+				<li>
+					<div class="menu-drop">
+						<span class="current">{$res2.0.c_name}
+							<i class="ico"></i>
+						</span>
+						<div class="menu-drop-list">
+							{volist name='res3' id='v4'}
+							   <a href="brand?cid={$v4.cid}&bid={$v4.bid}" target="_blank">{$v4.b_name}</a>
+							{/volist}
+						</div>
+					</div>
+				</li>
+			</ul>
+		</div>
+
+		<div class="selector">
+			<div class="selectebox">
+				<div class="prop-item brand-imglist">
+					<dl>
+						<dt>品牌：</dt>
+
+						<dd>
+							<div class="brand-inner">
+								<div class="brandlist">
+									<ul class="clearfix">
+										{volist name='res3' id='v4'}
+										 <li   rel="H" manuName ="{$v4.c_name}">
+											<a href="brand?cid={$v4.cid}&bid={$v4.bid}" target="_blank">
+												<img width="80" height="40" src="__IMG__/{$v4.logo}" alt="{$v4.b_name}" title="{$v4.b_name}">
+											</a>
+										</li>
+										{/volist}
+									</ul>
+								</div>
+							</div>
+						</dd>
+					</dl>
+				</div>
+				<div class="prop-item" style="display: block;">
+					<dl>
+						<dt>价格：</dt>
+						<dd>
+							<ul>
+								{volist name='price' id='jg'}
+								<li><a href="type?rid={$jg.rid}" title="{$jg.range}">{$jg.range}</a></li>
+								{/volist}
+							 </ul>
+						</dd>
+					</dl>
+				</div>
+				<div class="prop-item" style="display: block;">
+					<dl>
+						<dt>内存容量：</dt>
+						<dd>
+							<ul>
+								{volist name='ram' id='nc'}
+								<li><a href="type?ram_id={$nc.ram_id}" title="{$nc.ram}">行货{$nc.ram}</a></li>
+								{/volist}
+							</ul>
+						</dd>
+					</dl>
+				</div>
+				<div class="prop-item">
+					<dl>
+						<dt>网络类型：</dt>
+						<dd>
+							<ul>
+								{volist name='wap' id='wl'}
+								<li><a href="type?wid={$wl.wid}" title="{$wl.type}">{$wl.type}</a></li>
+								{/volist}
+							</ul>
+						</dd>
+					</dl>
+				</div>
+			</div>
+		</div>
+	</div>
+
+	<div class="wrapper body">
+		<div class="z-security-service clearfix">
+			<span class="z-security-logo">ZOL商城服务保障：</span>
+			<a href="http://help.zol.com/index.php?c=List&subClassId=34&grandClassId=146" target="_blank"><i class="iconfont">&#xe609;</i>行货保证</a>
+			<a href="http://help.zol.com/index.php?c=List&subClassId=34&grandClassId=146"><i class="iconfont">&#xe60b;</i>发票保障</a>
+			<!--<a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe614;</i>48小时发货</a>-->
+			<a href="http://help.zol.com/index.php?c=List&subClassId=34&grandClassId=146" target="_blank"><i class="iconfont">&#xe60e;</i>快递包邮</a>
+			<a href="http://help.zol.com/index.php?c=List&subClassId=34&grandClassId=146" target="_blank"><i class="iconfont">&#xe60d;</i>无忧退换</a>
+			<a href="http://help.zol.com/index.php?c=List&subClassId=34&grandClassId=146" target="_blank"><i class="iconfont">&#xe60a;</i>先行赔付</a>
+		</div>
+
+		<div class="toolbar clearfix">
+			<ul class="sort">
+				<li class="current">
+					<a href="http://www.zol.com/cell_phone/list/c34_s57.html" class="default">默认</a>
+				</li>
+				<li class="">
+					<a href="http://www.zol.com/cell_phone/list/c34_s57_o7.html" class="default">高人气</a>
+				</li>
+				<li class="">
+					<a href="http://www.zol.com/cell_phone/list/c34_s57_o3.html" class="default">高销量</a>
+				</li>
+				<li class="">
+					<a href="http://www.zol.com/cell_phone/list/c34_s57_o2.html" class="default">价格由低到高</a>
+				</li>
+				<li class="">
+					<a href="http://www.zol.com/cell_phone/list/c34_s57_o1.html" class="default">价格由高到低</a>
+				</li>
+
+				<li class="price-range clearfix">
+
+				</li>
+				<li class="screening">
+					<span class="fold" style="display:none;">更多<i class="ico"></i></span>
+					<div class="list clearfix">
+						<label for="check_2">
+							<input type="checkbox" name="is_tuan" value="1" class="check" id="check_2" >团购</label>
+						<label for="check_22">
+							<input type="checkbox" name="is_cuxiao" value="1" class="check" id="check_22" >店铺促销</label>
+					</div>
+				</li>
+			</ul>
+		</div>
+		<ul class="goods-list clearfix" id="goodsPicList">
+			{volist name='data' id='vo'}
+			<li>
+				<div class="attention" onclick="$.saveGoodsFllow({goodsId: '29549228', merchantId: '194111', goodsName: '{$vo.p_name} {$vo.type} {$vo.ram} {$vo.size} {$vo.color} 4100毫安大电池 骁龙八核处理器', goodsPrice: '888.00'}, this)">
+				</div>
+				<a href="product?cid={$vo.cid}&bid={$vo.bid}&pid={$vo.pid}" target="_blank" class="pic"><span class="img"><img src="__IMG__/{$vo.img}" alt="{$vo.p_name} {$vo.type} {$vo.ram} {$vo.size} {$vo.color} 4100毫安大电池 骁龙八核处理器" title="{$vo.p_name} {$vo.type} {$vo.ram} {$vo.size} {$vo.color} 4100毫安大电池 骁龙八核处理器" width="220"></span></a>
+				<div class="title">
+					<a href="product?cid={$vo.cid}&bid={$vo.bid}&pid={$vo.pid}" target="_blank">
+						{$vo.p_name} {$vo.type} {$vo.ram} {$vo.size} {$vo.color} 4100毫安大电池 骁龙八核处理器
+					</a>
+				</div>
+				<div class="price-bar clearfix">
+					<span class="price">&yen;{$vo.sale}</span>
+					<a href="product?cid={$vo.cid}&bid={$vo.bid}&pid={$vo.pid}"><span class="price" >购买</span></a>
+				</div>
+
+			</li>
+			{/volist}
+		</ul>
+		<div class="page">
+			{$page}
+		</div>
+	</div>
+
+	<div class="wrapper">
+		<div class="activity-section">
+			<div class="hd">
+				<div class="title"><span>正在进行中的活动</span></div>
+			</div>
+			<ul class="list clearfix">
+				<li>
+					<a href="http://go.zol.com/topic/6458338.html?spm=861.37838" target="_blank">
+						<img width="285" height="214" src="__PIC__/chmkjllkq2cifmo6aabu7g0-uooaaewwaeqho4aafue176.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="http://go.zol.com/topic/6531745.html?spm=861.37839" target="_blank">
+						<img width="285" height="214" src="__PIC__/chmkj1mn3p6itmxvaabungj1zg8aagfwgccnf8aag62156.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="http://www.zol.com/detail/notebook/asus/27743923.html?spm=861.37836" target="_blank">
+						<img width="285" height="214" src="__PIC__/chmkjlejrmaieahjaaawf1zzql8aaukaweb4pwaadav657.jpg" alt="">
+					</a>
+				</li>
+				<li>
+					<a href="http://geek.zol.com/?spm=861.37837" target="_blank">
+						<img width="285" height="214" src="__PIC__/chmkjlglmgiisqh5aade6ksoz7qaaxqlant4w4aan8a179.jpg" alt="">
+					</a>
+				</li>
+			</ul>
+		</div>
+		<div class="search-list">
+			<div class="search-box-bottom">
+				<div class="search-bottom">
+					<form action="http://www.zol.com/index.php" method="get">
+						<input type="hidden" name="c" value="List">
+						<input name="keyword" type="text" class="search-text" value="">
+						<input type="submit" value="搜 索" class="search-btn" hidefocus="true">
+					</form>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>
+    <!-- 公共底部 -->
+<div class="footer">
+    {include file="index/footer"}
+</div>
+</body>
+
+</html>

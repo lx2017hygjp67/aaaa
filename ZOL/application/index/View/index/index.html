@@ -1,0 +1,547 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>首页</title>
+	<link rel="stylesheet" type="text/css" href="__CSS__/index.css">
+	<link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.css">
+   
+
+  <link rel="icon" href="http://icon.zol-img.com.cn/zol_shop/favicon.ico" type="image/icon" />
+  <link rel="shortcut icon" href="http://icon.zol-img.com.cn/zol_shop/favicon.ico" type="image/icon" />
+</head>
+<body  onscroll="gd()">
+       <!-- 公共头部 -->
+<div id="header">
+{include file="index/header"}
+</div>
+
+<div id="body">
+  <div id="all">
+    <div id="first">
+    <!--   --------公共头部------ -->
+      
+     
+     <!--  以上是公共头部 -->
+
+
+  <!-------------  顶部轮播 ---------->
+      <div class="lunbo">
+ 
+
+     	 	 <div class="imgs">
+                   
+         {volist name="ret" id="lb"}
+    
+                 
+                <a class="img" href="#"><img src="__IMG__/{$lb.l_dz}"></a>
+
+               <!--  <a class="img" href="#"><img src="__IMG__/lunbo/t2.jpg"/></a>
+                <a class="img" href="#"><img src="__IMG__/lunbo/t3.jpg"/></a> -->
+
+         {/volist}
+
+               
+                
+                 
+          <!-- 轮播图的数字  实现自增可以用$i -->
+           <ul id="tabs">
+            {volist name='ret' id="fd"}
+               
+                  <li class="a1">{$i}</li>    
+               
+            {/volist}
+            
+         <!--     <li class="a1">2</li>
+             <li class="a1">3</li> -->
+             
+           </ul>
+
+
+     	 	 </div>
+
+
+      </div>
+     <!-- ------- 以上是顶部轮播 ------>
+
+      <div id="fg"></div>
+
+
+      <!-- 团购 -->
+     <!--  <div class="tg">
+        <div class="ig"><img src="__IMG__/index/d1.jpg"></div>
+      	<h3 style="margin-left: 55px; margin-top: -35px;">团购</h3>
+      	<span class="tip">热门、低价、买实惠</span>
+      	<a href="http://tuan.zol.com/" target="_blank" class="more-link">更多</a>
+      </div>
+       <div id="fg"></div> -->
+
+       <!----------团购轮播 -------->
+
+
+<!--         <div class="tlun">
+       	      <div class="tluns">
+
+                <div class="dff">
+                    <h4>苹果 iPhone 6</h4>
+                    <p>全网通 32GB</p>
+                    <img src="__IMG__/lunbo/t6.png">
+                </div>
+                <div class="dff">
+                    <div class="hye">
+                      <h4>苹果 iPhone 6</h4>
+                      <p>全网通 32GB</p>
+                    </div>
+                    <img src="__IMG__/lunbo/t6.png">
+                </div>
+                <div class="dff">
+                   <h4>苹果 iPhone 6</h4>
+                    <p>全网通 32GB</p>
+                   <img src="__IMG__/lunbo/t6.png">
+                </div>
+
+
+              </div>
+        </div>
+ -->
+
+      <!--  -------以上是团购轮播----- -->
+
+
+
+
+       <!-- 同城购 -->
+        <div class="tg">
+        <div class="ig"><img src="__IMG__/index/t6.jpg"></div>
+      	<h3 style="margin-left: 55px; margin-top: -35px;">团购</h3>
+      	<span class="tip">同城、身边、退换无忧</span>
+      	<a href="http://tuan.zol.com/" target="_blank" class="more-link">更多</a>
+        </div>
+        <div class="tc">
+        	<div><a href="#"> <img src="__IMG__/index/t1.jpg"> </a></div>
+             <div><a href="#"> <img src="__IMG__/index/t2.jpg"> </a></div>
+              <div><a href="#"> <img src="__IMG__/index/t3.jpg"> </a></div>
+        </div>
+        
+        <div id="fg"></div>
+        <div class="new-phone">
+
+        	 <div class="ne"> <img src="__IMG__/index/t4.jpg"> </div>
+        	   
+        	 <div class="ne"> <img src="__IMG__/index/t4.jpg"> </div>
+        	   
+             <div class="ne"> <img src="__IMG__/index/t4.jpg"> </div> 
+               
+             <div class="ne"> <img src="__IMG__/index/t4.jpg"> </div>
+             
+             <div class="ne"> <img src="__IMG__/index/t4.jpg"> </div>
+
+             <div class="zt">
+                <div class="ne-zt">
+
+                	<p1><a href="#">新品现货 华为honor/荣耀 荣耀9 (4+64GB）全网通智能手机</a></p1>
+                	<p class="ware-msg">新品现货 华为honor/荣耀 荣耀9 (4+64GB）全网通智能手机</p>
+                	<p class="price">¥2599.00</p>
+                	<span class="tl">电商参考价: </span>
+                	<span class="jg"> ¥2299.00 </span>
+                    <span class="tt">
+                    	<i  class="con">商品评价</i>
+                    	<i  class="con">商品视频</i>
+                    	<i  class="con">网友点评</i>
+                    </span>  
+
+                </div>
+                <div class="ne-zt">
+                	<p1><a href="#">新品现货 华为honor/荣耀 荣耀9 (4+64GB）全网通智能手机</a></p1>
+                	<p class="ware-msg">新品现货 华为honor/荣耀 荣耀9 (4+64GB）全网通智能手机</p>
+                	<p class="price">¥2599.00</p>
+                	<span class="tl">电商参考价: </span>
+                	<span class="jg"> ¥2299.00 </span>
+                    <span class="tt">
+                    	<i  class="con">商品评价</i>
+                    	<i  class="con">商品视频</i>
+                    	<i  class="con">网友点评</i>
+                    </span>  
+                </div>
+                <div class="ne-zt">
+                	<p1><a href="#">新品现货 华为honor/荣耀 荣耀9 (4+64GB）全网通智能手机</a></p1>
+                	<p class="ware-msg">新品现货 华为honor/荣耀 荣耀9 (4+64GB）全网通智能手机</p>
+                	<p class="price">¥2599.00</p>
+                	<span class="tl">电商参考价: </span>
+                	<span class="jg"> ¥2299.00 </span>
+                    <span class="tt">
+                    	<i  class="con">商品评价</i>
+                    	<i  class="con">商品视频</i>
+                    	<i  class="con">网友点评</i>
+                    </span>  
+                </div>
+                <div class="ne-zt">
+                	<p1><a href="#">新品现货 华为honor/荣耀 荣耀9 (4+64GB）全网通智能手机</a></p1>
+                	<p class="ware-msg">新品现货 华为honor/荣耀 荣耀9 (4+64GB）全网通智能手机</p>
+                	<p class="price">¥2599.00</p>
+                	<span class="tl">电商参考价: </span>
+                	<span class="jg"> ¥2299.00 </span>
+                    <span class="tt">
+                    	<i  class="con">商品评价</i>
+                    	<i  class="con">商品视频</i>
+                    	<i  class="con">网友点评</i>
+                    </span>  
+                </div>
+                <div class="ne-zt"><p1><a href="#">新品现货 华为honor/荣耀 荣耀9 (4+64GB）全网通智能手机</a></p1>
+                	<p class="ware-msg">新品现货 华为honor/荣耀 荣耀9 (4+64GB）全网通智能手机</p>
+                	<p class="price">¥2599.00</p>
+                	<span class="tl">电商参考价: </span>
+                	<span class="jg"> ¥2299.00 </span>
+                    <span class="tt">
+                    	<i  class="con">商品评价</i>
+                    	<i  class="con">商品视频</i>
+                    	<i  class="con">网友点评</i>
+                    </span> 
+                </div>
+             </div>
+
+        </div>
+        <div id="fg"></div>
+
+       <div class="tg">
+        <div class="ig"><img src="__IMG__/index/t5.jpg"></div>
+      	<h3 style="margin-left: 55px; margin-top: -35px;">品牌精选</h3>
+      	<span class="tip">大牌、保障、服务赞</span>
+      	<a href="http://tuan.zol.com/" target="_blank" class="more-link">更多</a>
+       </div>
+       <!-- 品牌精选 -->
+       <div class="pjx">
+       	     <div class="jxt"> <img src="__IMG__/index/t7.jpg"> </div>
+       	     <div class="jxt"> <img src="__IMG__/index/t7.jpg"> </div>
+       	     <div class="jxt"> <img src="__IMG__/index/t7.jpg"> </div>
+       	     <div class="jxt"> <img src="__IMG__/index/t7.jpg"> </div>
+       	     <div class="jxt"> <img src="__IMG__/index/t7.jpg"> </div>
+       </div>
+      <div id="fg"></div>
+      
+     <!--  电竞频道 -->
+      <div class="tg">
+        <div class="ig"><img src="__IMG__/index/t8.jpg"></div>
+      	<h3 style="margin-left: 55px; margin-top: -35px;">电竞频道</h3>
+      	<span class="tip">热点、焦点、卖点</span>
+      	<a href="http://tuan.zol.com/" target="_blank" class="more-link">更多</a>
+      </div>
+      <div class="dj">
+      	   <div class="left">
+                <div class="zttop">
+                	<h5 class="kkl">热门</h5>
+                 <ul class="column-hd_tab">
+                    <li class="tab-btn">电竞主机</li>
+                    <li class="tab-btn">电竞外设</li>
+                    <li class="tab-btn cur">游戏本</li>
+                </ul>
+                </div> 
+                <div class="kklo">
+
+                 <!-- ----------------- 热门栏轮播 ------------>
+                	 <div class="jjk">
+                  
+                  {volist name="rty" id="ji"}
+                         
+                      <a href="" class="rm"><img src="__IMG__/{$ji.l_dz}"></a>
+
+                     <!--  <a href="" class="rm"><img src="__IMG__/lunbo/t5.jpg"></a> -->
+                    
+                   {/volist}
+
+
+                    <ul id="gkj">
+                      {volist name="rty" id="dx"}
+              
+                       <li class="go" style="font-size: 0px">{$i}</li>
+                 <!--       <li class="go" style="font-size: 0px;">2</li> -->
+
+                      {/volist}
+
+                    </ul>
+              
+
+
+                   </div>
+                    <!-- --------------以上是热门栏轮播 ------------ -->
+
+                	 <div class="floor">
+                	 	<div class="ghjk">
+                	 		<img src="__IMG__/index/t9.jpg" width="160px" height="160px">
+                      <span class="wztx1" style="margin-top: 30px;">      
+                      <p class="ware-name"><a href="#" target="_blank">金泰克120G限时直降</a>
+                      </p>
+                      <p class="price">¥339.00</p>
+                      </span>
+                	 	</div>
+                        <div class="ghjk">
+                          <img src="__IMG__/index/t9.jpg" width="160px" height="160px">
+                      <span class="wztx1" style="margin-top: 30px;">      
+                      <p class="ware-name"><a href="#" target="_blank">金泰克120G限时直降</a>
+                      </p>
+                      <p class="price">¥339.00</p>
+                      </span>
+                        </div>
+                        <div class="ghjk">
+                          <img src="__IMG__/index/t9.jpg" width="160px" height="160px">
+                      <span class="wztx1" style="margin-top: 30px;">      
+                      <p class="ware-name"><a href="#" target="_blank">金泰克120G限时直降</a>
+                      </p>
+                      <p class="price">¥339.00</p>
+                      </span>
+                        </div>
+                	 </div>
+
+                </div>     	   	 
+      	   </div>
+           <div class="right">
+               <div class="zttop" style="margin-top: 3px;">
+                    <h5 class="kkl">电竞DIY</h5>
+               </div>
+
+               <div class="sss">
+                    <img src="__IMG__/index/t10.jpg" width="160px" height="160px">
+               </div>
+                <div class="sss">
+                   <img src="__IMG__/index/t11.jpg" width="160px" height="160px">
+               </div>
+                <div class="sss">
+                    <img src="__IMG__/index/t12.jpg" width="160px" height="160px">
+               </div>
+
+              <div class="wztx">
+               <div class="wztx1">
+                <p class="ware-name"><a href="#" target="_blank">金泰克120G限时直降</a>
+                </p>
+              
+                <p class="price">¥339.00</p>
+                </div>
+           
+              
+            
+              <div class="wztx1">
+                <p class="ware-name"><a href="#" target="_blank">金泰克120G限时直降</a>
+                </p>
+              
+                <p class="price">¥339.00</p>
+                </div> 
+            
+            
+             
+               <div class="wztx1">
+                <p class="ware-name"><a href="#" target="_blank">金泰克120G限时直降</a>
+                </p>
+                <p class="price">¥339.00</p>
+              </div> 
+              </div>
+              
+              <!-- 以下是下面三张 -->
+                 <div class="sss" style="margin-top: 5px;">
+                    <img src="__IMG__/index/t12.jpg" width="160px" height="160px">
+                 </div>
+                   <div class="sss" style="margin-top: 5px;">
+                    <img src="__IMG__/index/t12.jpg" width="160px" height="160px">
+                 </div>
+                   <div class="sss" style="margin-top: 5px;">
+                    <img src="__IMG__/index/t12.jpg" width="160px" height="160px">
+                 </div>
+              
+                    <div class="wztx">
+               <div class="wztx1">
+                <p class="ware-name"><a href="#" target="_blank">金泰克120G限时直降</a>
+                </p>
+              
+                <p class="price">¥339.00</p>
+                </div>
+           
+              
+            
+              <div class="wztx1">
+                <p class="ware-name"><a href="#" target="_blank">金泰克120G限时直降</a>
+                </p>
+              
+                <p class="price">¥339.00</p>
+                </div> 
+            
+            
+             
+               <div class="wztx1">
+                <p class="ware-name"><a href="#" target="_blank">金泰克120G限时直降</a>
+                </p>
+                <p class="price">¥339.00</p>
+              </div> 
+              </div>
+  
+
+           </div>
+      </div>
+      <hr/>
+      <div class="fg"></div>
+   <!--    数码黑科技 -->
+      <div class="tg">
+        <div class="ig"><img src="__IMG__/index/t13.jpg"></div>
+        <h3 style="margin-left: 55px; margin-top: -25px;">数码集市</h3>
+        <span class="tip">潮流、前端、黑科技</span>
+        <a href="http://tuan.zol.com/" target="_blank" class="more-link">更多</a>
+      </div>
+      <div class="smkj">
+          <div class="smleft">
+                <div class="smtop">
+                  <h5 class="kkl">摄影/摄像</h5>
+                  <div class="lin"><a href="#" target="_blank">更多</a></div>
+                </div> 
+              <!--  数码科技图片以及文字  -->
+                <div class="tuwz">
+                    <div class="toop">
+                          <img src="__IMG__/index/t14.jpg">  
+                    </div> 
+                    <div class="kkjj">
+                        <p><a href="#" target="_blank">索尼A9全画幅微单单机</a></p>
+                        <p class="price">¥28888.00</p>
+                    </div>
+                </div>
+                <div class="tuwz">
+                    <div class="toop">
+                         <img src="__IMG__/index/t14.jpg"> 
+                    </div> 
+                    <div class="kkjj">
+                      <p><a href="#" target="_blank">索尼A9全画幅微单单机</a></p>
+                        <p class="price">¥28888.00</p>
+                    </div>
+                </div>
+                   <div class="tuwz">
+                    <div class="toop">
+                          <img src="__IMG__/index/t14.jpg"> 
+                    </div> 
+                    <div class="kkjj">
+                      <p><a href="#" target="_blank">索尼A9全画幅微单单机</a></p>
+                        <p class="price">¥28888.00</p>
+                    </div>
+                </div>
+                   <div class="tuwz">
+                    <div class="toop">
+                       <img src="__IMG__/index/t14.jpg"> 
+                    </div> 
+                    <div class="kkjj">
+                      <p><a href="#" target="_blank">索尼A9全画幅微单单机</a></p>
+                        <p class="price">¥28888.00</p>
+                    </div>
+                </div>
+                   <div class="tuwz">
+                    <div class="toop">
+                          <img src="__IMG__/index/t14.jpg"> 
+                    </div> 
+                    <div class="kkjj">
+                      <p><a href="#" target="_blank">索尼A9全画幅微单单机</a></p>
+                        <p class="price">¥28888.00</p>
+                    </div>
+                </div>
+                   <div class="tuwz">
+                    <div class="toop">
+                         <img src="__IMG__/index/t14.jpg"> 
+                    </div> 
+                    <div class="kkjj">
+                      <p><a href="#" target="_blank">索尼A9全画幅微单单机</a></p>
+                        <p class="price">¥28888.00</p>
+                    </div>
+                </div>
+
+
+
+          </div>
+          <div class="smright">
+                <div class="stop">
+                   <h5 class="kkl">笔记本/平板</h5>
+                  <div class="ln"><a href="#" target="_blank">更多</a></div>
+                </div> 
+                 <!--  笔记本图片以及文字  -->
+                <div class="tuwz">
+                    <div class="toop">
+                          <img src="__IMG__/index/t15.jpg">  
+                    </div> 
+                    <div class="kkjj">
+                        <p><a href="#" target="_blank">索尼A9全画幅微单单机</a></p>
+                        <p class="price">¥28888.00</p>
+                    </div>
+                </div>
+                <div class="tuwz">
+                    <div class="toop">
+                         <img src="__IMG__/index/t15.jpg"> 
+                    </div> 
+                    <div class="kkjj">
+                      <p><a href="#" target="_blank">索尼A9全画幅微单单机</a></p>
+                        <p class="price">¥28888.00</p>
+                    </div>
+                </div>
+                   <div class="tuwz">
+                    <div class="toop">
+                          <img src="__IMG__/index/t15.jpg"> 
+                    </div> 
+                    <div class="kkjj">
+                      <p><a href="#" target="_blank">索尼A9全画幅微单单机</a></p>
+                        <p class="price">¥28888.00</p>
+                    </div>
+                </div>
+                   <div class="tuwz">
+                    <div class="toop">
+                       <img src="__IMG__/index/t15.jpg"> 
+                    </div> 
+                    <div class="kkjj">
+                      <p><a href="#" target="_blank">索尼A9全画幅微单单机</a></p>
+                        <p class="price">¥28888.00</p>
+                    </div>
+                </div>
+                   <div class="tuwz">
+                    <div class="toop">
+                          <img src="__IMG__/index/t15.jpg"> 
+                    </div> 
+                    <div class="kkjj">
+                      <p><a href="#" target="_blank">索尼A9全画幅微单单机</a></p>
+                        <p class="price">¥28888.00</p>
+                    </div>
+                </div>
+                   <div class="tuwz">
+                    <div class="toop">
+                         <img src="__IMG__/index/t15.jpg"> 
+                    </div> 
+                    <div class="kkjj">
+                      <p><a href="#" target="_blank">索尼A9全画幅微单单机</a></p>
+                        <p class="price">¥28888.00</p>
+                    </div>
+
+                  </div> 
+           </div>
+          <div class="fg"></div>
+             
+          <!--   左侧固定图   --> 
+
+      <div class="gdt">
+
+        <ul class="djlc">
+          <li onclick="dt1()">团购</li>
+          <li onclick="dt2()">精选</li>
+          <li onclick="dt3()">热门</li>
+          <li onclick="dt4()">数码</li>
+          <li onclick="dt5()">全部</li>
+        </ul>
+      </div>
+      <!--   以上是左侧固定图  --> 
+    </div> 
+  </div>
+</div>
+<hr>
+
+
+<div class="footer">
+    {include file="index/footer"}
+</div>
+
+</body>
+ 
+<!-- ..................Jquery文件必须放在前面,要不然用不了................. -->
+
+<script type="text/javascript" src="__JS__/jquery.min.js"></script>
+<script type="text/javascript" src="__JS__/index.js"></script>
+
+
+</html>

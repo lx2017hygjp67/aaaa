@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title></title>
+        <meta charset="utf-8">
+        <link href="__CSS__/zolcom_index.css" rel="stylesheet" />
+        <link href="__CSS__/listv1.css" rel="stylesheet" type="text/css">
+        <link href="__CSS__/feedback.css" rel="stylesheet" type="text/css" />
+        <link href="__CSS__/shoploginbox.css" rel="stylesheet" />
+        <link href="__CSS__/side_toolbar.css" rel="stylesheet" type="text/css">
+        <link href="__CSS__/publichead.css" rel="stylesheet" type="text/css">
+        <link href="__CSS__/zolcom_index.css" rel="stylesheet" />
+        <link href="__CSS__/public-topbar.css" rel="stylesheet" />
+        <link href="__CSS__/public.css" rel="stylesheet" />
+        <link href="__CSS__/detail_v2.css" rel="stylesheet" />
+        <link href="__CSS__/subheading.css" rel="stylesheet" />
+        <link href="__CSS__/magiczoom.css" rel="stylesheet" type="text/css" />
+        <script src="__JS__/jquery.min.js"></script>
+        <style> body,h1,h2,h3,h4,h5,h6,dl,dt,dd,ul,ol,li,th,td,p,blockquote,pre,form,fieldset,legend,input,button,textarea,hr {margin:0;padding:0;}body {font:12px/1.5 Arial; color:#333;}select,input,button {vertical-align:middle;font-size:100%;}ul,ol {list-style:none;}fieldset,img {border:0;}em {font-style:normal;}.clearfix:after {content:"."; display: block; visibility: hidden; clear: both; height:0; font-size:0}.clearfix {*zoom:1}/*global*/.zc-back-home a:hover,.zc-login a:hover,.zc-register a:hover,.zc-quick-menu li a:hover{ color:#c00; text-decoration:underline;}.zc-quick-menu .zc-hd .ico,.zc-mobile .zc-hd{ background:url(http://icon.zol-img.com.cn/newshop/shop/index/topbar_ico.png) no-repeat;}.zc-topbar{ position:relative; z-index:997; height:29px; font:12px/29px arial; background:#f5f5f5; border-bottom:1px solid #e6e6e6;}.zc-login-info{ float:left;}.zc-back-home{ padding:0 20px 0 0;}.zc-back-home a{ color:#666; text-decoration:none;}.zc-login{ padding:0 20px 0 0; color:#666;}.zc-login a,.zc-register a{ color:#36c; text-decoration:none;}.zc-quick-menu{ float:right; margin:0 -10px 0 0;}.zc-quick-menu li{ float:left; margin:0 10px; height:29px; font:12px/29px arial;}.zc-separator{ color:#ccc;}.zc-quick-menu li a{ display:inline-block; color:#666; text-decoration:none;}.zc-quick-menu .zc-hover{ position:relative; zoom:1;}.zc-quick-menu .zc-my-center{ margin:0;}.zc-quick-menu .zc-hd{ position:relative; padding:0 23px 0 10px;}.zc-quick-menu .zc-hd .ico{ position:absolute; top:13px; right:10px; width:7px; height:4px; background-position:0 -45px;}.zc-quick-menu .zc-hd:hover{ color:#666; text-decoration:none;}.zc-my-center-bd{ display:none; position:absolute; top:29px; left:0; padding:3px 9px; width:88px; border:1px solid #ededed; background:#fff;}.zc-quick-menu .zc-hover .zc-hd{ z-index:2; margin:0 0 -1px; padding:0 22px 0 9px; height:30px; background-color:#fff; border-left:1px solid #ededed; border-right:1px solid #ededed;}.zc-hover .zc-my-center-bd{ display:block;}.zc-hover .zc-my-center-bd a{ display:block; font:12px/28px arial;}.zc-quick-menu .zc-my-center-bd a:hover{ color:#c00; text-decoration:none;}.zc-hover .zc-my-center-bd em{ color:#f33;}.zc-my-center-bd a:hover em{ color:#c00;}.zc-quick-menu .zc-mobile{ margin:0;}.zc-mobile .zc-hd{ padding:0 23px 0 25px; background-position:0 0;}.zc-quick-menu .zc-hover .zc-mobile-hd{ padding:0 22px 0 24px;}.zc-mobile .zc-mobile-bd{ display:none; position:absolute; top:29px; left:0; padding:20px; width:130px; height:130px; border:1px solid #ededed; background:#fff;}.zc-mobile .zc-mobile-bd img{ display:block;}.zc-hover .zc-mobile-hd{ background-position:-1px 0;}.zc-hover .zc-mobile-bd{ display:block;}.zc-quick-menu .zc-hover .ico{ -webkit-backface-visibility:hidden; border-color:#bbb transparent transparent; -webkit-transition:-webkit-transform .2s ease-in; -moz-transition:-moz-transform .2s ease-in;-o-transition:-o-transform .2s ease-in;transition:transform .2s ease-in; -moz-transform:rotate(180deg); -webkit-transform:rotate(180deg); -o-transform:rotate(180deg); transform:rotate(180deg);}.zc-service-tel{ display:none; position:absolute; top:29px; right:0; padding:3px 9px; width:80px; border:1px solid #ededed; font: 12px/28px arial; text-align:right; background:#fff;}.zc-hover .zc-service-tel{ display:block;}    
+        </style>
+    </head>
+<body>
+<div>
+    <div class="zc-topbar">    
+        <div class="wrapper clearfix">        
+            <div class="zc-login-info">            
+                <span class="zc-back-home"><a href="{:url('index')}">商城首页</a></span>
+                
+                <span class="zc-login">Hi~欢迎来到ZOL商城，请<a href="{:url('login')}">登录</a></span>                
+                <span class="zc-register"><a href="{:url('register')}">免费注册</a></span>                    
+            </div>        
+
+            <ul class="zc-quick-menu">            
+                <li><a href="{:url('personal')}">我的订单</a></li>            
+                <li class="zc-my-center" onmouseover="showUI(this)" onmouseout="hideUI(this)">                
+                    <a href="{:url('personal')}" class="zc-hd" >买家中心<i class="ico"></i></a>                <div class="zc-my-center-bd" id="zc-my-center-bd" style="display:none;">                    
+                        <a href="#" style="display:none;">我的优惠券&nbsp;&nbsp;<em>8</em></a> 
+                        <a href="http://my.zol.com/index.php?c=FollowMerchant">关注的店铺&nbsp;&nbsp;<em id="focusShopNum">0</em></a>                    
+                        <a href="http://my.zol.com/index.php?c=FollowGoods">关注的商品&nbsp;&nbsp;<em id="focusGoodsNum">0</em></a>                
+                    </div>            
+                </li>            
+
+                <li><a href="{:url('cart')}">购物车0件</a></li>
+                <li><a href="http://help.zol.com/">帮助中心</a></li>            
+                <li class="zc-separator">|</li>            
+                <li class="zc-mobile" onmouseover="showUI(this)" onmouseout="hideUI(this)">                
+                    <a href="javascript:;" class="zc-hd zc-mobile-hd">手机商城<i class="ico"></i></a> 
+                    <div class="zc-mobile-bd" id="zc-mobile-bd" style="display:none;">
+                        <img src="__IMG__/zolDingYue.jpg" width="130" height="130">
+                    </div>           
+                </li>            
+
+                <li><a href="http://www.zol.com.cn">中关村在线</a></li>       
+                <li class="lianxikefu">
+                    <a href="javascript:;"  onmouseover="showUI(this)" onmouseout="hideUI(this)" class="zc-hd">联系客服<i class="ico"></i></a>                
+                    <div class="zc-service-tel">400-688-1999</div>            
+                </li>        
+            </ul>    
+        </div>
+    </div>
+
+    <div style="text-align:center;margin: 0 auto -20px;width: 1200px;padding: 10px">      
+        <a href="javascript:;" target="_blank">用户您好：ZOL商城服务热线现已更改为4006881999</a>
+    </div>
+    
+    <script>    
+        var Z_now_time = "1505448369";    
+        var z_user_id = "";    
+        function showUI(obj) {        
+            var className = obj.className;        
+            if (className == "zc-my-center") {            
+                obj.className = "zc-my-center zc-hover";            
+                document.getElementById("zc-my-center-bd").style.display = "block";        
+            } else if (className == "zc-mobile") {            
+                obj.className = "zc-mobile zc-hover";            
+                document.getElementById("zc-mobile-bd").style.display = "block"; 
+            } else {            
+                obj.parentNode.className = "lianxikefu zc-hover";            
+                obj.nextSibling.style.display = "block";        
+            }   
+        }    
+
+        function hideUI(obj) {        
+            var className = obj.className;        
+            if (className == "zc-my-center zc-hover") {            
+                obj.className = "zc-my-center";            
+                document.getElementById("zc-my-center-bd").style.display = "none";        
+            } else if (className == "zc-mobile zc-hover") {            
+                obj.className = "zc-mobile";            
+                document.getElementById("zc-mobile-bd").style.display = "none";        
+            } else {            
+                obj.parentNode.className = "lianxikefu";            
+                obj.nextSibling.style.display = "none";        
+            }    
+        }    
+
+        function getApiNumber() {        
+            if (typeof jQuery == "undefined") {            
+                return false;        
+            } else {            
+                var url = "http://www.zol.com/index.php?c=Ajax_Topbar&callback=?&t=" + Math.random();
+                $.getJSON(url, function (data) {                
+                    if (data) {                    
+                        document.getElementById("shop-cart-num").innerHTML = "购物车" + data.cartNumber + "件";
+                        document.getElementById("focusShopNum").innerHTML = data.shopNumber;
+                        document.getElementById("focusGoodsNum").innerHTML = data.goodsNumber;        
+                    }            
+                });        
+            }    
+        }    
+
+        getApiNumber();
+    </script>
+
+    <style>
+        .search-history-selected{background:#f5f5f5}
+        .search-history .delete{ display:none; position:absolute; top:0; right:8px; color:#c00; cursor:pointer;}
+    </style>
+    <script src="__JS__/jquery.min.js"></script>
+    <link href="__CSS__/publichead.css" rel="stylesheet" type="text/css">
+    <div class="header clearfix">
+        <div class="logo">
+                    <h1><a title="ZOL商城" href="{:url('index')}"><img src="__IMG__/logo_180x50.gif"></a></h1>
+            <p>中关村在线旗下网上商城</p>
+        </div>
+        <div class="search-box">
+            <form action="" method="get">
+                <input type="hidden" name="c" value="List">
+                <div class="search">
+                    <input name="keyword" type="text" class="search-text" autocomplete="off" value=""/>
+                    <input type="submit" value="搜 索" class="search-btn" hidefocus="true"/>
+                </div>
+                <input type="hidden" name="spm" value="921">
+            </form>
+        </div>
+        <div class="ad-div">
+        <a href="" target="_blank">
+            <img width="180" height="60" src="__IMG__/372.jpg" alt="ZOL商城承诺">
+        </a>
+    </div>
+</div>
+<div class="nav-box" style="width:1200px;height: 50px;margin-top: 30px;">
+    <div class="category-nav-container" onmouseover="showNavUl();" onmouseout="hideNavUl();">
+        <h2 class="category-nav-title">全部商品分类<i class="ico"></i></h2>
+        <div class="category-menu-nav " id="category-menu-nav" style="display:none;">
+             <ul class="menu-nav-container">
+                {volist name="res" id="v1"}
+                <li rel="{$v1.cid}" id="subCateKey{$v1.cid}" onmouseover="showNavList(this);" onmouseout="hideNavList(this);">
+                   <div class="item">
+                        <i class="iconfont iconfont-phone">&#xe600;</i>
+                        <a href="{:url('type')}?cid={$v1.cid}" target="_blank">{$v1.c_name}</a>
+                    </div>
+                    <div class="category-menu-content category-{$v1.cid}">
+                        <dl class="service">
+                            <dt><a href="http://go.zol.com/topic/5062097.html" target="_blank">服务保障</a></dt>
+                            <dd class="clearfix"><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe609;</i>行货保证</a><a href="#"><i class="iconfont">&#xe60b;</i>发票保障</a><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe60e;</i>顺丰包邮</a><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe60d;</i>无忧退换</a><a href="http://go.zol.com/topic/5062097.html" target="_blank"><i class="iconfont">&#xe60a;</i>先行赔付</a></dd>
+                        </dl>
+
+                        <dl >
+                            <dt><a href="{:url('type')}?cid={$v1.cid}" target="_blank">{$v1.c_name}</a></dt>
+                            <dd>
+                                <p>
+                                    {volist name='res1' id='v2'}
+                                    {if $v2.cid==$v1.cid}
+                                    <a href="{:url('brand')}?cid={$v1.cid}&bid={$v2.bid}" target="_blank">{$v2.b_name}</a>
+                                    |
+                                    {/if}
+                                    {/volist}
+                                </p>
+
+                            </dd>
+                        </dl>
+                    </div>
+
+                </li>
+                {/volist}
+
+            </ul>
+            <div class="ad-div"><a href="{:url('group')}" target="_blank">
+                <img width="200" height="70" src="__PIC__/chmkj1z7xxmijiraaaavx_5h8msaagjzwdgkk0aabxf118.gif" alt="特惠限时抢"></a>
+            </div>
+        </div>
+    </div>
+    <ul class="nav clearfix">
+        <li >
+            <a href="{:url('index')}" target="_blank">首页</a>
+        </li>
+        <li >
+            <a href="{:url('group')}" target="_blank">团购</a>
+        </li>
+        <li >
+            <a href="{:url('group_fu')}" target="_blank">ZOL智选</a>
+        </li>
+    </ul>
+    <div class="nav-tips">
+        <a href="{:url('brand')}" target="_blank">iPhone 8 抢占新机，预约到店购。</a>
+    </div>
+</div>
+<script type="text/javascript">
+
+function showNavUl() {
+    document.getElementById("category-menu-nav").style.display = "block";
+    document.getElementById("div1").style.display = "none";
+};
+function hideNavUl() {
+    document.getElementById("category-menu-nav").style.display = "none";
+    document.getElementById("div1").style.display = "block";
+};
+function showNavList(obj) {
+    obj.className = "current";
+};
+function hideNavList(obj) {
+    obj.className = " ";
+};
+           var searchFunction = {
+                searchKeyword: null,
+                searchButton: null,
+                searchHistory: null,
+                searchHistoryList: null,
+                searchHistoryListDel: null,
+                searchHistoryListClose: null,
+                getHistoryList: function () {
+                    if (typeof jQuery == "undefined") {
+                        return false;
+                    } else {
+                        var url = "http://www.zol.com/index.php?c=Ajax_PublicHead&a=AjaxGetSearchHistory&callback=?&t=" + Math.random();
+                        $.getJSON(url, function (data) {
+                            if (data.msg) {
+                                if($(".search").has(".search-history")){
+                                    $(".search-history").remove();
+                                };
+                                $(".search").append(data.msg);
+                                searchFunction.getElements();
+                                searchFunction.eventListener();
+                            };
+                        });
+                    };
+                },
+                getElements: function () {
+                    searchFunction.searchKeyword = document.querySelector(".search .search-text");
+                    searchFunction.searchButton = document.querySelector(".search .search-btn");
+                    searchFunction.searchHistory = document.querySelector(".search-history");
+                    searchFunction.searchHistoryList = document.querySelectorAll(".search-history ul li");
+                    searchFunction.searchHistoryListLength = document.querySelectorAll(".search-history ul li").length;
+                    searchFunction.searchHistoryListDel = document.querySelectorAll(".search-history ul li .delete");
+                    searchFunction.searchHistoryListClose = document.querySelector(".search-history .close");
+
+                },
+                eventListener: function () {
+
+                    searchFunction.searchKeyword.addEventListener("focus", function () {
+                        searchFunction.showHistory();
+                    });
+                    searchFunction.searchKeyword.addEventListener("click", function () {
+                        searchFunction.showHistory();
+                    });
+                    var index_key = -1;
+                    searchFunction.searchKeyword.addEventListener("keydown", function (e) {
+                        if (window.event) {
+                            e = window.event;
+                        };
+                        var keyNumber = e.keyCode;
+
+                        if (38 == keyNumber) {
+                            if(index_key<=0){
+                                index_key = searchFunction.searchHistoryListLength - 1;
+                            }else{
+                                index_key--;
+                            };
+                            $(".search ul li:eq("+index_key+")").siblings().removeClass("search-history-selected").end().addClass("search-history-selected");
+                            $(".search ul li:eq("+index_key+")").children(".delete").show();
+                            $(".search ul li:eq("+index_key+")").siblings().children(".delete").hide();
+                            var keyword = $(".search ul li:eq("+index_key+")").attr("keyword");
+                            $(".search .search-text").val(keyword);
+                            var tongjiVaule = $(".search ul li:eq("+index_key+")").attr("tongji");
+                            $("input[name=spm]").val(tongjiVaule);
+                        }else if(40 == keyNumber){
+                            if(index_key == (searchFunction.searchHistoryListLength - 1)){
+                                index_key = 0;
+                            }else{
+                                index_key++;
+                            };
+                            $(".search ul li:eq("+index_key+")").siblings().removeClass("search-history-selected").end().addClass("search-history-selected");
+                            $(".search ul li:eq("+index_key+")").children(".delete").show();
+                            $(".search ul li:eq("+index_key+")").siblings().children(".delete").hide();
+                            var keyword = $(".search ul li:eq("+index_key+")").attr("keyword");
+                            $(".search .search-text").val(keyword);
+                            var tongjiVaule = $(".search ul li:eq("+index_key+")").attr("tongji");
+                            $("input[name=spm]").val(tongjiVaule);
+                        };
+                    });
+
+                    $(".search").on("mouseover",".search-history ul li",function(){
+                        index_key = $(this).index();
+                        $(this).siblings().removeClass("search-history-selected").end().addClass("search-history-selected");
+                        $(this).children(".delete").show();
+                        $(this).siblings().children(".delete").hide();
+                        var tongjiVaule = $(this).attr("tongji");
+                        $("input[name=spm]").val(tongjiVaule);
+                    });
+                    $(".search").on("mouseout",".search-history",function(){
+                        $("input[name=spm]").val("921");
+                    });
+                    searchFunction.searchKeyword.addEventListener("keyup",function(e){
+                        var searchKeywordVal = searchFunction.searchKeyword.value;
+                        var searchKeywordLength = searchFunction.searchKeyword.value.length;
+                        if (window.event) {
+                            e = window.event;
+                        };
+                        var keyNumber = e.keyCode;
+                        if((8 == keyNumber) && (searchKeywordLength == 0)){
+                            /* 历史记录*/
+                            var url  = "http://www.zol.com/index.php?c=Ajax_PublicHead&a=AjaxGetSearchHistory&callback=?&t=" + Math.random()+"&debug=yes";
+                            $.getJSON(url, function (data) {
+                                if (data.msg) {
+                                    if($(".search").has(".search-history")){
+                                        $(".search-history").remove();
+                                    };
+                                    $(".search").append(data.msg);
+                                    $(".search-history").css("display","block");
+                                    searchFunction.getElements();
+                                    index_key = -1;
+                                };
+                            });
+                            if(searchFunction.searchKeyword.value.length == 0){
+                                $("input[name=spm]").val("921");
+                            };
+                        }else{
+                            /* 关联记录 */
+                            if(searchKeywordLength > 2 && (keyNumber != 37) && (keyNumber != 38) && (keyNumber != 39) && (keyNumber != 40) && (keyNumber != 13)){
+                                var url  = "http://www.zol.com/index.php?c=Ajax_PublicHead&a=AjaxGetRelatedSearchHistory&callback=?&t=" + Math.random()+"&debug=yes";
+                                var data = {keyword:searchKeywordVal};
+                                $.getJSON(url, data, function (data) {
+                                    if (data.msg) {
+                                        if($(".search").has(".search-history")){
+                                            $(".search-history").remove();
+                                        };
+                                        $(".search").append(data.msg);
+                                        $(".search-history").css("display","block");
+                                        searchFunction.getElements();
+                                        index_key = -1;
+                                    };
+                                });
+                            };
+                        };
+                    });
+
+                    searchFunction.searchKeyword.addEventListener("click", function (e) {
+                        searchFunction.stopPropagation(e);
+                    });
+                    $(document).click(function(event){
+                        index_key = -1;
+                        $(".search-history ul li").siblings().removeClass("search-history-selected");
+                        $(".search-history ul li").siblings().children(".delete").hide();
+                        searchFunction.hideHistory();
+
+                    });
+                    searchFunction.searchHistoryListClose.addEventListener("click", function () {
+                        searchFunction.hideHistory();
+                    });
+                    $(".search").on("click",".search-history ul li",function(){
+                        $(".search .search-text").val($(this).attr("keyword"));
+                        $(".search .search-btn").click();
+                    });
+                    $(".search").on("click",".search-history ul li .delete",function(e){
+                        e = e || window.event;
+                        if (e.stopPropagation) {
+                                e.stopPropagation();
+                        } else {
+                                e.cancelBubble = true;
+                        };
+                        var _this = $(this);
+                        var dataId = _this.attr("data-id");
+                        var url = "http://www.zol.com/index.php?c=Ajax_PublicHead&a=AjaxDeleteSearchHistory&callback=?&t=" + Math.random();
+                        $.getJSON(url, {dataId: dataId}, function (data) {
+                            if (data.flag) {
+                                _this.parent("li").remove();
+                                searchFunction.searchHistoryListLength = searchFunction.searchHistoryListLength - 1;
+                                var index_key1 = index_key + 1;
+                                $(".search ul li:eq("+index_key1+")").siblings().removeClass("search-history-selected").end().addClass("search-history-selected");
+                                $(".search ul li:eq("+index_key1+")").children(".delete").show();
+                                $(".search ul li:eq("+index_key1+")").siblings().children(".delete").hide();
+                                $(".search .search-text").focus();
+                            };
+                        });
+                    });
+                },
+                showHistory: function () {
+                    searchFunction.searchHistory.style.display = "block";
+                },
+                hideHistory: function () {
+                    searchFunction.searchHistory.style.display = "none";
+                },
+                stopPropagation: function (e) {
+                    e = e || window.event;
+                    if (e.stopPropagation) {
+                        e.stopPropagation();
+                    } else {
+                        e.cancelBubble = true;
+                    };
+                }
+            };
+            searchFunction.getHistoryList();
+
+// 统计代码
+function getUserTrack(event, goodsId, url) {
+    var statsImg = new Image();
+    var rand     = new Date().getTime();
+    var ipck     = getCookie("ip_ck");
+    var URL      = typeof(url) == "undefined" ? document.URL : url;
+    statsImg.src = "http://pvtest.zol.com.cn/images/pvevents.gif?t="
+            + rand + "&event=" + event
+            + "&ip_ck=" + ipck
+            + "&goodsId=" + goodsId
+            + "&url=" + URL;
+
+};
+
+if (document.getElementById("noresearch_keyword")) {
+      document.getElementById("noresearch_keyword").addEventListener("click", function() {
+          getUserTrack("noresearch_keyword");
+      });
+};
+</script>
+
+</body>
+</html>

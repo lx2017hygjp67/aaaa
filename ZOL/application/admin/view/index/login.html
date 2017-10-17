@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<title>zol后台管理</title>
+	<link rel="stylesheet" href="__URL__/admin/style/style.css">
+	<style>
+		body{width:100%;height:100%;overflow:hidden;background:url(__URL__/admin/images/loginBg.jpg) no-repeat;background-size:cover;position:absolute;}
+
+		.change{
+			color: black;
+			position: relative;
+			top: 35px;
+		}
+		.change:hover{
+			color: skyblue;
+		}
+	</style>
+	
+		<meta name="viewport" content="width=device-width, initial-scale=1" />
+		<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+		<meta name="keywords" content="Lambent Login Form Responsive, Login Form Web Template, Flat Pricing Tables, Flat Drop-Downs, Sign-Up Web Templates, Flat Web Templates, Login Sign-up Responsive Web Template, Smartphone Compatible Web Template, Free Web Designs for Nokia, Samsung, LG, Sony Ericsson, Motorola Web Design" />
+		<script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+</head>
+<body>
+	<h1>管理员登录表单</h1>
+	<div class="main-agileinfo">
+		<h2>现在登录</h2>
+		<div id="loginform" class="loginBox">
+		<form action="{:url('execute')}" method="post">
+			<input type="text" name="name" class="name" placeholder="请输入名字" onfocus="this.placeholder=''" onblur="if(this.placeholder=='')this.placeholder='请输入名字'" >
+			<input type="password" name="password" class="password" placeholder="请输入密码"  onfocus="this.placeholder=''" onblur="if(this.placeholder=='')this.placeholder='请输入密码'">
+			<ul>
+				<li>
+				<input type="text" name="verify" style="width: 83px;height: 10px;" placeholder="请输入验证码" onfocus="this.placeholder=''" onblur="if(this.placeholder=='')this.placeholder='请输入验证码'">
+                <img src="__URL__/yanzhengma/getverify.php" alt="" id="verifyimg" style="position: relative;top: 15px;">
+                <a class="change" 
+                onclick="document.getElementById('verifyimg').src = '__URL__/yanzhengma/getverify.php'"
+                 href="javascript:void(0)" 
+                 >看不清，换一张</a>
+                </li>
+				<div>
+					<b>使我保持登录状态:</b>
+					<input type="checkbox" name="online" style="width: 20px;height: 15px" checked="">
+
+					<select name="retime">
+					<option value="0">请选择</option>
+						<option value="1">一天</option>
+						<option value="7">一周</option>
+						<option value="30">一个月</option>
+
+					</select>
+				</div>
+			</ul>
+			
+
+			<div class="clear"></div>
+			<input type="submit" value="Login">
+		</form>
+		</div>
+	</div>
+	<div class="footer-w3l">
+		<p class="agile"> &copy;<a> 2017 xxxxxxxxxxxxx</a></p>
+	</div>
+</body>
+</html>

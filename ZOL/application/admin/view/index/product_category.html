@@ -1,0 +1,157 @@
+﻿<!--_meta 作为公共模版分离出去-->
+{include file="index/_meta"}
+<!--/meta 作为公共模版分离出去-->
+
+<title>产品分类</title>
+<link rel="stylesheet" href="__ADM__../lib/zTree/v3/css/zTreeStyle/zTreeStyle.css" type="text/css">
+</head>
+<body>
+<!--_header 作为公共模版分离出去-->
+{include file="index/_header"}
+<!--/_header 作为公共模版分离出去-->
+
+<!--_menu 作为公共模版分离出去-->
+{include file="index/_menu"}
+<!--/_menu 作为公共模版分离出去-->
+<section class="Hui-article-box">
+	<nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span> 产品管理 <span class="c-gray en">&gt;</span> 产品分类 <a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" ><i class="Hui-iconfont">&#xe68f;</i></a></nav>
+	<div class="Hui-article">
+		<article class="cl pd-20">
+			
+			<div class="cl pd-5 bg-1 bk-gray mt-20"> <span class="l"><a title="批量删除" href="javascript:;" onclick="admin_role_del(this,'1')" class="btn btn-danger radius" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i>批量删除</a></span> <span class="r"><div class="text-c">
+				<form class="Huiform" method="post" action="" target="_self">
+					<a href="javascript:;" onclick="admin_role_add('添加分类','product_category_add.html?type=add','800')"><button type="button" class="btn btn-success" id="" name="" ><i class="Hui-iconfont">&#xe600;</i> 添加新分类</button></a>
+				</form>
+			</div></span> </div>
+			<div class="mt-10">
+				<table class="table table-border table-bordered table-bg table-sort">
+					<thead>
+						<tr class="text-c">
+							<th width="25"><input type="checkbox" name="" value=""></th>
+							<th width="70">ID</th>
+							<th width="80">排序</th>
+							<th width="120">分类名称</th>
+							<th>库存数量</th>
+							<th width="100">操作</th>
+						</tr>
+					</thead>
+					<tbody>
+					{volist name='res' id='pp'}
+						<tr class="text-c">
+							<td><input name="" type="checkbox" value=""></td>
+							<td>{$pp.cid}</td>
+							<td><input type="text" class="input-text text-c" value="{$i}"></td>
+							<td class="text-l"><img title="国内品牌" src="__ADM__h-ui.admin/images/cn.gif"> {$pp.c_name}</td>
+							<td class="text-l">{$data}（件）</td>
+							<td class="f-14 product-brand-manage"><a title="编辑" href="javascript:;" onclick="admin_role_edit('品牌编辑','product_category_add.html?type=edit&cid={$pp.cid}','4')" style="text-decoration:none"><i class="Hui-iconfont">&#xe6df;</i></a> <a title="删除" href="javascript:;" onclick="admin_role_del(this,'1')" class="ml-5" style="text-decoration:none"><i class="Hui-iconfont">&#xe6e2;</i></a></td>
+						</tr>
+					{/volist}
+					</tbody>
+				</table>
+			</div>
+		</article>
+	</div>
+</section>
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="__ADM__../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="__ADM__../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="__ADM__h-ui/js/H-ui.js"></script>
+<script type="text/javascript" src="__ADM__h-ui.admin/js/H-ui.admin.page.js"></script>
+<!--/_footer /作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本-->
+<script type="text/javascript" src="__ADM__../lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="__ADM__../lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
+<script type="text/javascript" src="__ADM__../lib/laypage/1.2/laypage.js"></script>
+<script type="text/javascript" src="__ADM__../lib/zTree/v3/js/jquery.ztree.all-3.5.min.js"></script>
+<script type="text/javascript">
+var setting = {
+	view: {
+		dblClickExpand: false,
+		showLine: false,
+		selectedMulti: false
+	},
+	data: {
+		simpleData: {
+			enable:true,
+			idKey: "id",
+			pIdKey: "pId",
+			rootPId: ""
+		}
+	},
+	callback: {
+		beforeClick: function(treeId, treeNode) {
+			var zTree = $.fn.zTree.getZTreeObj("tree");
+			if (treeNode.isParent) {
+				zTree.expandNode(treeNode);
+				return false;
+			} else {
+				demoIframe.attr("src",treeNode.file + ".html");
+				return true;
+			}
+		}
+	}
+};
+
+var zNodes =[
+	{ id:1, pId:0, name:"一级分类", open:true},
+	{ id:11, pId:1, name:"二级分类"},
+	{ id:111, pId:11, name:"三级分类"},
+	{ id:112, pId:11, name:"三级分类"},
+	{ id:113, pId:11, name:"三级分类"},
+	{ id:114, pId:11, name:"三级分类"},
+	{ id:115, pId:11, name:"三级分类"},
+	{ id:12, pId:1, name:"二级分类 1-2"},
+	{ id:121, pId:12, name:"三级分类 1-2-1"},
+	{ id:122, pId:12, name:"三级分类 1-2-2"},
+];
+
+var code;
+
+function showCode(str) {
+	if (!code) code = $("#code");
+	code.empty();
+	code.append("<li>"+str+"</li>");
+}
+
+$(document).ready(function(){
+	var t = $("#treeDemo");
+	t = $.fn.zTree.init(t, setting, zNodes);
+	demoIframe = $("#testIframe");
+	demoIframe.bind("load", loadReady);
+	var zTree = $.fn.zTree.getZTreeObj("tree");
+	zTree.selectNode(zTree.getNodeByParam("id",'11'));
+});
+</script>
+<script type="text/javascript">
+$('.table-sort').dataTable({
+	"aaSorting": [[ 1, "desc" ]],//默认第几个排序
+	"bStateSave": true,//状态保存
+	"aoColumnDefs": [
+	  //{"bVisible": false, "aTargets": [ 3 ]} //控制列的隐藏显示
+	  {"orderable":false,"aTargets":[0,5]}// 制定列不参与排序
+	]
+});
+</script>
+<script type="text/javascript">
+/*商品分类添加*/
+function admin_role_add(title,url,w,h){
+	layer_show(title,url,w,h);
+}
+/*商品分类-编辑*/
+function admin_role_edit(title,url,id,w,h){
+	layer_show(title,url,w,h);
+}
+/*商品分类-删除*/
+function admin_role_del(obj,id){
+	layer.confirm('确认要删除吗？',function(index){
+		//此处请求后台程序，下方是成功后的前台处理……
+		
+		
+		$(obj).parents("tr").remove();
+		layer.msg('已删除!',{icon:1,time:1000});
+	});
+}
+</script>
+</body>
+</html>

@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html>
+<head>
+		 <meta charset="utf-8">
+	   <title>登录</title>
+		 <link rel="stylesheet" type="text/css" href="/ZOL/public/static/css/bootstrap.css">
+	   <link rel="stylesheet" type="text/css" href="/ZOL/public/static/css/1.css">
+	   <link rel="icon" href="http://icon.zol-img.com.cn/zol_shop/favicon.ico" type="image/icon" />
+        <link rel="shortcut icon" href="http://icon.zol-img.com.cn/zol_shop/favicon.ico" type="image/icon" />
+</head>
+<body>
+
+	<div id="First">
+		 <div class="title">
+				 <div class="logo"> 
+						 <img src="/ZOL/public/static/img/logo.jpg">
+				 </div>
+				 <div class="dl">
+							<h3>还没有ZOL商城账号？</h3>
+							<font><a href="./register.html">立即注册</a></font>
+
+				 </div>
+		 <div class="fg"></div>
+		 <div class="mid">
+				 <div class="left">
+						 <img src="/ZOL/public/static/img/1.jpg">            
+				 </div> 
+				 <div class="right">
+
+							<div id="aa"><h4><a onclick="sj2()" href="#" id="hj">登录ZOL商城</a></h4></div>
+							
+
+							<div id="bb"><h4><a onclick="sj3()" href="#">商家登录</a></h4></div>
+							
+      <!--  以下是隐藏 -->
+        <div id="bigyc">
+
+           <form action="login" method="post">
+
+					<div id="yc1">   
+						 <div class="cc"><input  type="text" name="username" placeholder="手机号/邮箱/用户名" required=""></div>
+												 <div class="dd"><input  type="text" name="mm" placeholder="密码" required=""></div>
+							<div class="sj">
+								<img src="/ZOL/public/static/img/3.jpg">
+								<font><a href="#" onclick="sj1()">手机动态码登录</a></font>                
+						 </div>
+						 <span id="wj"><a href="#">忘了密码?</a></span>
+					</div>
+					 <!-- 以下是隐藏一 -->
+					<div id="yc2">
+
+							 <div class="cc"><input type="text" name="" placeholder="手机号"></div>
+							 <div class="dd"><input style="width: 102px" type="text" name=""></div>
+                <!-- ------------图片验证------------ -->
+
+
+
+               <div class="tp">
+                    <div class="yzmj">   
+               	       <img src="__URL__/yanzhengma/getverify.php" alt="" id="verifyimg" style="position: relative;top: 15px;"> 
+               	    </div> 
+                    <div class="jdka">
+                       <a onclick="document.getElementById('verifyimg').src = '__URL__/yanzhengma/getverify.php'" href="javascript:void(0)"  style="color: black;position: relative;top: 35px;">看不清，换一张</a>
+                    </div>   
+               </div>
+
+
+
+               <!--  -----------以上是图片验证部分------- -->
+               <div class="gg">
+               	    <input type="text" name="" placeholder="短信验证码">
+               	    <div class="yzm"><input style="width:80px" type="submit" name="" value="发送验证码"></div>
+
+               </div>
+
+					</div>
+
+
+						 <!-- 以下是登录 -->
+						 <div class="cf"><input type="submit" name="" value="登录"></div>
+						 <div class="wz">
+								<img src="/ZOL/public/static/img/4.jpg">
+						 </div>
+
+
+           <div class="last">
+
+						 <div class="wx"><img src="/ZOL/public/static/img/5.jpg"></div>
+
+						 <div class="qq"><img src="/ZOL/public/static/img/6.jpg"></div>
+
+					 </div>
+         
+
+        </div>
+
+     </form>
+    
+
+
+      <form action="sjlogin" method="post">
+     
+        <!-- 以下是商家登录 -->
+            <div id="sjia">
+        	     <div class="cc"><input  type="text" name="sjh" placeholder="手机号/邮箱/用户名" required=""></div>
+							 <div class="dd"><input  type="text" name="mm" placeholder="密码" required=""></div>
+              <span id="mima"><a>忘了密码?</a></span>
+
+               <div class="jk"><input type="submit" name="" value="登录"></div>
+
+            </div>
+       
+
+        
+       </form>
+
+
+				 </div>
+
+
+
+		 </div>   
+    <hr/>
+		
+     <div class="footer">
+  
+     	 <span id="op">关于ZOL商城&nbsp;|&nbsp;联系我们&nbsp;|&nbsp;帮助中心</span>
+       <span id="po">©2017. 中关村在线 版权所有</span>
+    
+
+     </div>
+  
+    <hr>
+
+
+	</div>   
+	 
+
+</body>
+	<script type="text/javascript" src="/ZOL/public/static/js/jquery-3.2.1.min.js"></script>
+		 <script type="text/javascript" src="/ZOL/public/static/js/bootstrap.js"></script>
+		 <script type="text/javascript" src="/ZOL/public/static/js/1.js"></script>
+</html>
+
+
+

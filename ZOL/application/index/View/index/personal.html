@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+	<title>{}</title>
+</head>
+	<link rel="stylesheet" type="text/css" href="__CSS__/bootstrap.css">
+	<link rel="stylesheet" type="text/css" href="__CSS__/per_public.css">
+<body class="body">
+    <!-- header -->
+    <div class="top_header">
+        <a target="_blank" href="http://www.zol.com.cn">中关村在线</a>
+        |<a target="_blank" href="http://www.zol.com">ZOL商城</a>
+        |<a target="_blank" href="http://tuan.zol.com">Z团</a>
+        |<a target="_blank" href="http://dealer.zol.com.cn">经销商</a>
+
+        <div class="top_mid">
+            您好，{}
+            <span id="sp0"><a href="">退出</a></span>
+            <span id="sp1"><a href="personal">买家中心</a></span>
+            <div id="hide">
+                <li><a href="">已买到的商品</a></li>
+                <li><a href="">收货地址</a></li>
+            </div>
+            <i>
+                <a href="cart">我的购物车（）</a>
+                <a href="personal?c=SystemMessage">消息中心（）</a>
+                <a href="http://help.zol.com/">帮助中心</a>
+            </i>
+        </div>
+    </div>
+    <!-- search_header -->
+    <div class="search">
+        <div>
+            <a class="logo" href="personal">买家中心</a>
+            <a href="index">首页</a>
+            <a href="personal?c=SystemMessage">消息</a>
+        </div>
+        <div class="inp">
+            <form action="" method="post" accept-charset="utf-8">
+                <input class="searchtext" type="text" name="search" placeholder="搜索商品/店铺">
+                <input class="btn-sm ser" type="submit" name="sub" value="搜索">
+            </form>
+        </div>
+    </div>
+    <!-- content  -->
+    <div class="lg_cont">
+    <!-- left ul -->
+        <div class="left">
+            <ul>
+                <span>订单中心</span>
+                <li><a href="personal?c=OrderManage">我的订单</a></li>
+                <li><a href="tuan?c=default">团购订单</a></li>
+                <li><a href="personal?c=Review_Index">评价晒单</a></li>
+                <li><a href="personal?c=CuanJi_Default">我购买的配置单</a></li>
+
+                <span>我的关注</span>
+                <li><a href="personal?c=FollowMerchant">关注的商家</a></li>
+                <li><a href="personal?c=FollowGoods">关注的商品</a></li>
+
+                <span>我的优惠</span>
+                <li><a href="personal?c=Tuan_TuanCoupon">团购优惠券</a></li>
+                <li><a href="">我的红包</a></li>
+                <li><a href="personal?c=ShopCoupon">店铺优惠券</a></li>
+
+                <span>消息中心</span>
+                <li><a href="personal?c=SystemMessage">我的信息</a></li>
+
+                <span>个人设置</span>
+                <li><a href="personal?c=Setting">收货地址管理</a></li>
+                <li><a href="">ZOL个人中心</a></li>
+
+                <span>售后服务</span>
+                <li><a href="personal?c=ComplainManage">投诉维权</a></li>
+                <li><a href="personal?c=Refund_RefundList">退款/售后</a></li>
+
+                <span>特色频道</span>
+                <li><a href="">团购</a></li>
+                <li><a href="">DIY攒机馆</a></li>
+                <li><a href="">手机馆</a></li>
+                <li><a href="">限时抢购</a></li>
+                <li><a href="http://help.zol.com/index.php?c=Detail&id=1019">ZOL商城服务说明</a></li>
+
+            </ul>
+        </div>
+
+        <!-- right  div-->
+
+        <div class="right">
+        <!-- OrderManage -->
+        {if $pd eq 'OrderManage'}
+            <div class="{$pd}">
+               <div class="{$pd}top">
+                   <a href="personal?c=OrderManage" id="cur" class="li">商城订单</a>
+                   <a href="personal?c=OrderManage&a=DealerOrderManager" class="li">经销商订单</a>
+                   <hr>
+
+                       <div class="img">
+                           <a href="">
+                           <div class="img1">
+                           </div>
+                           <span>待付款{}</span>
+                       </a>
+                    </div>
+
+                    <div class="img">
+                        <a href="">
+                           <div class="img2">
+                           </div>
+                           <span>待发货{}</span>
+                        </a>
+                    </div>
+
+                    <div class="img">
+                        <a href="">
+                           <div class="img3">
+                           </div>
+                           <span>待收货{}</span>
+                        </a>
+                    </div>
+
+                    <div class="img">
+                        <a href="">
+                           <div class="img4">
+                           </div>
+                           <span>待评价{}</span>
+                        </a>
+                    </div>
+                   <hr/ id="d1">
+                <!-- product -->
+                <div class="product">
+                    <table class="table">
+                        <tr id="first_tr">
+                            <td>商品信息</td>
+                            <td>单价</td>
+                            <td>数量</td>
+                            <td>售后</td>
+                            <td>实付款(元)</td>
+                            <td id="dp">
+                                <a href="javascript:void(0)" id="d1">全部状态</a><span class="caret"> </span>
+                                 <div class="hide_div">
+                                    <li><a href="">全部状态</a></li>
+                                    <li><a href="">等待卖家确认</a></li>
+                                    <li><a href="">等待买家付款</a></li>
+                                    <li><a href="">等待卖家发货</a></li>
+                                    <li><a href="">卖家已发货</a></li>
+                                    <li><a href="">交易完成</a></li>
+                                    <li><a href="">交易关闭</a></li>
+                            </div>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                        {if  $pd eq 'OrderManage' && $msg eq ''}
+                            <p>您还没有订单</p>
+                         {/if}
+                    </table>
+
+                </div>
+               </div>
+
+               <div class="like">
+                    <h4>猜您喜欢</h4>
+                    <hr>
+                    <div>
+                        <a href="" title="">
+                            <img src="__IMG__/" alt="请稍等">
+                        </a>{}
+                    </div>
+                    <div>
+                        <a href="" title="">
+                            <img src="__IMG__/" alt="请稍等">
+                        </a>{}
+                    </div>
+                    <div>
+                        <a href="" title="">
+                            <img src="__IMG__/" alt="请稍等">
+                        </a>{}
+                    </div>
+                    <div>
+                        <a href="" title="">
+                            <img src="__IMG__/" alt="请稍等">
+                        </a>{}
+                    </div>
+                </div>
+
+        {/if}
+        <!-- Review_Index -->
+        {if $pd eq 'Review_Index'}
+           <div class="review_top">
+               <ul>
+                   <li><a href="personal?c=Review_Index&isReview=1">待评价{}</a></li>
+                   <li><a href="personal?c=Review_Index&isReview=2">待追评{}</a></li>
+                   <li><a href="personal?c=Review_Index&isReview=3">全部{}</a></li>
+               </ul>
+           </div>
+           <hr>
+            {if $pd eq 'Review_Index' && $review eq ''}
+                <div class='review_content'>
+                    <img src="__IMG__/no-goods.png" width="200">
+                </div>
+            {/if}
+        {/if}
+
+
+        <!-- CuanJi_Default -->
+        {if $pd eq 'CuanJi_Default'}
+            <div class="CuanJi">
+                <h4>我购买的配置单</h4>
+                <table class="table">
+                    <tr>
+                        <td>配置清单</td>
+                        <td>买家留言</td>
+                        <td>参考报价</td>
+                        <td>状态</td>
+                        <td>操作</td>
+                    </tr>
+                    {if $msg eq ''}
+                        <p>您还没有攒机配置清单，快去
+                            <a href=''>攒机频道</a>
+                            逛逛吧</p>
+                    {/if}
+                </table>
+            </div>
+        {/if}
+        <!-- FollowMerchant -->
+        {if $pd eq 'FollowMerchant'}
+            <div class="like_M">
+                <p>我关注的商家</p>
+            </div>
+
+            <div class="like">
+                 <h4>猜您喜欢</h4>
+                    <hr>
+                    <div>
+                        <a href="" title="">
+                            <img src="__IMG__/" alt="请稍等">
+                        </a>{}
+                    </div>
+                    <div>
+                        <a href="" title="">
+                            <img src="__IMG__/" alt="请稍等">
+                        </a>{}
+                    </div>
+                    <div>
+                        <a href="" title="">
+                            <img src="__IMG__/" alt="请稍等">
+                        </a>{}
+                    </div>
+                    <div>
+                        <a href="" title="">
+                            <img src="__IMG__/" alt="请稍等">
+                        </a>{}
+                    </div>
+            </div>
+        {/if}
+        <!-- FollowGoods -->
+        {if $pd eq 'FollowGoods'}
+            <div class="like_M">
+                <p>我关注的商品</p>
+                <table class="table">
+                    <tr>
+                        <td>商品信息</td>
+                        <td>单价(元)</td>
+                        <td>关注时间</td>
+                        <td>操作</td>
+
+                    </tr>
+                </table>
+            </div>
+
+            <div class="like">
+                 <h4>猜您喜欢</h4>
+                    <hr>
+                    <div>
+                        <a href="" title="">
+                            <img src="__IMG__/" alt="请稍等">
+                        </a>{}
+                    </div>
+                    <div>
+                        <a href="" title="">
+                            <img src="__IMG__/" alt="请稍等">
+                        </a>{}
+                    </div>
+                    <div>
+                        <a href="" title="">
+                            <img src="__IMG__/" alt="请稍等">
+                        </a>{}
+                    </div>
+                    <div>
+                        <a href="" title="">
+                            <img src="__IMG__/" alt="请稍等">
+                        </a>{}
+                    </div>
+            </div>
+        {/if}
+
+        {if $pd eq 'Tuan_TuanCoupon'}
+            <div class="top_sale">
+                <h4>使用优惠券</h4>
+                <p>请输入您手中的优惠券密码：</p>
+                <form method="post" action="">
+                    <input type="text" name="" class="input">-
+                    <input type="text" name="" class="input">-
+                    <input type="text" name="" class="input">-
+                    <input type="text" name="" class="input">
+                    <input type="submit" name="" value="绑定" class="btn">
+                    <p class="hz">密码只包含数字0-9,大写字母A-Z</p>
+                </form>
+                <br><br>
+                <div class="mid_sale">
+                    <h4>已绑定优惠券</h4>
+                    <p>每次只能使用 1 张优惠券哦，每天最多可绑定 2 张优惠券</p>
+                    <table class="table">
+                        <tr>
+                            <td>金额(元)</td>
+                            <td>优惠券密码</td>
+                            <td>有效期</td>
+                            <td>状态</td>
+                            <td>备注</td>
+                        </tr>
+                    </table>
+                </div>
+
+                <div class="bottom_sale">
+                    <h4>优惠券温馨提示：</h4>
+                    <li>1.优惠券可在下单时直接抵扣支付金额，退款时不退还代金券部分款项；</li>
+                    <li>2.一个订单只是用一张代金券，不能多张券同时使用；</li>
+                    <li>3.当优惠券的金额大于商品订单金额时，无法成功交易，订单金额需要大于优惠券面值方可正常使用；</li>
+                    <li>点击查看更多优惠券使用规则</li>
+                </div>
+            </div>
+        {/if}
+
+        <!-- ShopCoupon -->
+        {if $pd eq 'ShopCoupon'}
+            <div class="coupon">
+                <a href="personal?c=ShopCoupon">商城优惠券</a>
+                <a href="personal?c=Coupon">经销商优惠券</a>
+                <hr>
+              <ul><!--  考虑ajax的异步处理    -->
+                  <li><a href="personal?c=ShopCoupon&couponStatus=1" class="on">可使用{}</a></li>
+                  <li><a href="personal?c=ShopCoupon&couponStatus=2">已使用{}</a></li>
+                  <li><a href="personal?c=ShopCoupon&couponStatus=3">已过期{}</a></li>
+              </ul>
+            </div>
+        {/if}
+        <!-- Coupon -->
+        {if $pd eq 'Coupon'}
+            <div class="coupon">
+                <a href="personal?c=ShopCoupon">商城优惠券</a>
+                <a href="personal?c=Coupon">经销商优惠券</a>
+                <hr>
+              <ul><!--  考虑ajax的异步处理    -->
+                  <li><a href="personal?c=ShopCoupon&couponStatus=1" class="on">可使用{}</a></li>
+                  <li><a href="personal?c=ShopCoupon&couponStatus=2">已使用{}</a></li>
+                  <li><a href="personal?c=ShopCoupon&couponStatus=3">已过期{}</a></li>
+              </ul>
+              {if $msg eq ''}
+                <br><br>
+                <p>暂无优惠券</p>
+              {/if}
+            </div>
+        {/if}
+
+        <!-- SystemMessage -->
+        {if $pd eq 'SystemMessage'}
+            <div class="system">
+               <a href="personal?c=SystemMessage">系统通知</a>
+               <a href="personal?c=ConsultMessage">商品咨询</a>
+               <hr>
+               {if $msg eq ''}
+                <div class="msg">
+                    <p>暂无通知公告！</p>
+                </div>
+               {/if}
+            </div>
+        {/if}
+        <!-- ConsultMessage -->
+
+        {if $pd eq 'ConsultMessage'}
+             <div class="consult">
+               <a href="personal?c=SystemMessage" class="top_a">系统通知</a>
+               <a href="personal?c=ConsultMessage" class="top_a">商品咨询</a>
+               <hr>
+               <form method="post" action="">
+                   <input type="checkbox" name="" id="checkall">全选
+                   <a href="">删除</a>
+                    <table class="table">
+                        <tr>
+                            <td>通用类型</td>
+                            <td>详细内容</td>
+                            <td>时间</td>
+                            <td class="pj">评价<span class="caret"></span>
+                            <div class="hide_cont">
+                                <li><a href="personal?c=ConsultMessage&status=0">评价</a></li>
+                                <li><a href="personal?c=ConsultMessage&status=1">未回复</a></li>
+                                <li><a href="personal?c=ConsultMessage&status=2">已回复</a></li>
+
+                            </div>
+                            </td>
+                            <td>操作</td>
+                        </tr>
+                    </table>
+                    {if $msg eq ''}
+                    <div class="msg">
+                        <p>暂时无匹配的!</p>
+                    </div>
+                    {/if}
+               </form>
+            </div>
+        {/if}
+        <!-- Setting -->
+        <!-- 如果已存在收货地址则显示出来 -->
+        {if $pd eq 'Setting'}
+        <div class="address">
+            <h4>新增收货地址</h4><hr>
+            <form method="post" action="">
+                <ul>
+                    <li class="li1">收货人：
+                        <span>*</span>
+                        <input type="text" name="user" class="in">
+                    </li>
+                    <li>所在地区：
+                        <span>*</span>
+                        <select name="addr">
+                            <option>北京</option>
+                        </select>
+                    </li>
+                    <li><div class="text">
+                        <i class="xie">详细地址：
+                        <span>*</span></i>
+                        <div class="in1">
+                        <textarea id="address" maxlength="30"></textarea></div></div>
+                    </li>
+                    <li>邮政编码：
+                        <span>*</span>
+                        <input class="in" type="text" name="zipcode">
+                    </li>
+                    <li class="li1">手机号：
+                        <span>*</span>
+                        <input class="in" type="text" name="ph_num">
+                    </li>
+                    <li>电子邮件：
+                        <span>*</span>
+                        <input class="in" type="text" name="email">
+                    </li>
+                    <li>
+                        <input type="checkbox" name="default">设置为默认
+                    </li>
+                    <li><input type="submit" name="sub" value="保存" class="btn"></li>
+                </ul>
+            </form>
+        </div>
+        {/if}
+        <!-- ComplainManage -->
+        {if $pd eq 'ComplainManage'}
+            <h4>投诉维权</h4>
+            <p>如需投诉维权，请到“我买到的商品”列表中,根据订单选择。</p>
+        {/if}
+        <!-- Refund_RefundList -->
+        {if $pd eq 'Refund_RefundList'}
+            <div class="Refund">
+                <h4>商城订单</h4>
+                <hr>
+                <ul>
+                    <li>
+                      <div class="xu">
+                    状态:
+                        <input type="text" value="全部状态"  readonly="readonly" class="in">
+                        <div class="arrow-icon" onclick="que()"></div>
+                        <div class="hide_ul">
+                            <ul style="display: none;">
+                                <li onclick="chose()">等待卖家处理</li>
+                                <li onclick="chose()">退款被拒绝</li>
+                                <li onclick="chose()">客服介入中</li>
+                                <li onclick="chose()">退款成功</li>
+                                <li onclick="chose()">退款申请关闭</li>
+                            </ul>
+                            <ul style="display: none;">
+                                <li onclick="chose()">等待卖家处理</li>
+                                <li onclick="chose()">退货被拒绝</li>
+                                <li onclick="chose()">客服介入中</li>
+                                <li onclick="chose()">卖家同意退货</li>
+                                <li onclick="chose()">等待卖家收货</li>
+                                <li onclick="chose()">退货成功</li>
+                                <li onclick="chose()">退货申请关闭</li>
+                            </ul>
+                            <ul style="display: none;">
+                               <li onclick="chose()">等待卖家处理</li>
+                                <li onclick="chose()">换货被拒绝</li>
+                                <li onclick="chose()">客服介入中</li>
+                                <li onclick="chose()">卖家同意换货</li>
+                                <li onclick="chose()">等待卖家收货</li>
+                                <li onclick="chose()">卖家已重新发货</li>
+                                <li onclick="chose()">换货成功</li>
+                                <li onclick="chose()">换货申请关闭</li>
+                            </ul>
+                        </div>
+                      </div>
+                    </li>
+                    <li>
+                        <input type="radio" name="back" class="tui">退款
+                        <input type="radio" name="back" class="tui">退货退款
+                        <input type="radio" name="back" class="tui">换货
+                    </li>
+                    <li>
+                        订单编号:<input type="text" name="select" class="in">
+                    </li>
+                    <li>
+                        <input type="submit" name="sub" value="搜索" class="btn btn-sm se">
+                    </li>
+                </ul>
+                <br/><br/><br/>
+                <table class="table">
+                    <tr>
+                        <th>退款/退货编号</th>
+                        <th>订单编号</th>
+                        <th>商品名称</th>
+                        <th>申请时间</th>
+                        <th>状态</th>
+                        <th>操作</th>
+                    </tr>
+                </table>
+                <a href="javascript:void(0)" class="btn nextpage">下一页 》</a>
+            </div>
+        {/if}
+        </div>
+    </div>
+
+
+
+
+
+
+
+
+      <!-- bottom div -->
+
+    <div class="bottom">
+      <span>合作伙伴：</span>
+
+            <a target="_blank" href="http://www.vmall.com">华为商城</a><span id="s">|</span>
+            <a target="_blank" href="http://www.juanpi.com/">卷皮网</a><span id="s">|</span>
+            <a target="_blank" href="http://www.cebnet.com.cn/">中国电子银行网</a><span id="s">|</span>
+            <a target="_blank" href="http://www.99114.com/">电子商务平台</a><span id="s">|</span>
+            <a target="_blank" href="http://www.301688.com">三帝贸易网</a><span id="s">|</span>
+            <a target="_blank" href="http://www.pztuan.com/index.aspx">团购</a><span id="s">|</span>
+            <a target="_blank" href="http://www.meilele.com/">家具网</a><span id="s">|</span>
+            <a target="_blank" href="http://www.wbiao.cn/">手表品牌大全</a><span id="s">|</span>
+            <a target="_blank" href="http://www.dionly.com/">钻石</a><span id="s">|</span>
+            <a target="_blank" href="http://www.yxlady.com/">伊秀女性网</a><span id="s">|</span>
+            <a target="_blank" href="http://www.eepw.com.cn">电子产品世界</a><span id="s">|</span>
+        <div class="ul">
+            <a target="_blank" href="http://www.wadongxi.com">挖东西比价网</a><span id="s">|</span>
+            <a target="_blank" href="http://www.egou.com">易购网</a><span id="s">|</span>
+            <a target="_blank" href="http://www.admaimai.com">广告网</a><span id="s">|</span>
+            <a target="_blank" href="http://54114.com">网上114</a><span id="s">|</span>
+        </div>
+
+        <div class="footer">
+            <a target="_blank" href="http://www.zol.com.cn">中关村在线</a><span id="s">|</span>
+            <a target="_blank" href="http://www.zol.com">ZOL商城</a><span id="s">|</span>
+            <a target="_blank" href="http://tuan.zol.com">Z团</a><span id="s">|</span>
+            <a target="_blank" href="http://qiang.zol.com">限时抢购</a><span id="s">|</span>
+            <a target="_blank" href="http://zc.zol.com/">Z众筹</a><span id="s">|</span>
+            <a target="_blank" href="http://dealer.zol.com.cn">经销商</a><span id="s">|</span>
+            <a target="_blank" href="http://detail.zol.com.cn/">产品报价</a><span id="s">|</span>
+            <a target="_blank" href="http://bbs.zol.com.cn/">论坛</a><span id="s">|</span>
+            <a target="_blank" href="http://ask.zol.com.cn/">问答</a><span id="s">|</span>
+        </div>
+
+        <div class="another_foot">
+            <a target="_blank" href="http://help.zol.com/index.php?c=Detail&amp;id=1254">关于ZOL商城</a>
+            <span id="s">|</span><a target="_blank" href="http://help.zol.com/index.php?c=Default">帮助中心</a>
+             <span id="s">|</span><a target="_blank" href="http://help.zol.com/index.php?c=Detail&amp;id=1256">联系我们</a>
+            <span id="s">|</span><a target="_blank" href="http://help.zol.com/index.php?c=Detail&amp;id=1257">发展历程</a>
+            <span id="s">|</span><a target="_blank" href="http://help.zol.com/index.php?c=Detail&amp;id=1255">媒体报道</a>
+                        <span>
+                            &copy;<script>document.write((new Date).getFullYear());</script> 中关村在线 版权所有. 京ICP备09041801号-182 京ICP证010391号
+                        </span>
+
+        </div>
+
+        <div class="another_foot">
+            <a target="_blank" href="http://www.hd315.gov.cn/beian/view.asp?bianhao=010202001021500016"><img width="85" height="32" src="http://icon.zol-img.com.cn/newshop/shop/index/beian.jpg"></a><a target="_blank" href="http://www.bj.cyberpolice.cn/index.do"><img width="86" height="32" src="http://icon.zol-img.com.cn/newshop/shop/index/jingcha.jpg"></a><a target="_blank" href="https://search.szfw.org/cert/l/CX20111228001277001325"><img width="90" height="32" src="http://icon.zol-img.com.cn/newshop/shop/index/chengxin.jpg"></a>
+        </div>
+    </div>
+
+
+
+
+</body>
+    <script type="text/javascript" src="__JS__/jquery.min.js"></script>
+    <script type="text/javascript" src="__JS__/bootstrap.js"></script>
+    <script type="text/javascript" src="__JS__/public.js"></script>
+</html>
